@@ -17,13 +17,13 @@ FPS = 60
 MAX_COLOR = 255
 
 #-------------------------------external files/assets---------------------------------#
-background = pygame.image.load("spaceBG.jpg")
+background = pygame.image.load("Assets/spaceBG.jpg")
 background = pygame.transform.scale(background,(screenW,screenH))
-sunIMG = pygame.image.load("sunBG.png")
+sunIMG = pygame.image.load("Assets/sunBG.png")
 sunScaleX = 100 #sun image width
 sunScaleY = 100 #sun image lenght
 sunIMG = pygame.transform.scale(sunIMG,(sunScaleX,sunScaleY))
-music = pygame.mixer.music.load('5012-light-years-astra-lost-in-space.mp3')
+music = pygame.mixer.music.load('Assets/5012-light-years-astra-lost-in-space.mp3')
 pygame.mixer.music.play(-1)
 volume = 0.2
 pygame.mixer.music.set_volume(volume)
