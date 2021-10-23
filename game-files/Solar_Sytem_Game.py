@@ -15,7 +15,7 @@ G = 20
 GAME_SPEED = 1 # 1 for Real time speed but its too slow
 FPS = 60
 MAX_COLOR = 255
-
+SUNMASS = 20000
 #-------------------------------external files/assets---------------------------------#
 background = pygame.image.load("Assets/spaceBG.jpg")
 background = pygame.transform.scale(background,(screenW,screenH))
@@ -128,7 +128,7 @@ def modifyVolume(volume):
 #--------------------------------------------------------------------------------------#
 
 #-------------------------------------Instanciate objects------------------------------#
-sun = SUN(screenW/2,screenH/2,40,20000) # instanciate the sun
+sun = SUN(screenW/2,screenH/2,40,SUNMASS = 20000) # instanciate the sun
              
 planetes = [ PLANETE("Elona",8+random.random()*15,80,0), #instanciate planetes
              PLANETE("Earth",8+random.random()*15,40,0),
