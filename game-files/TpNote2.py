@@ -17,7 +17,7 @@ FPS = 60
 MAX_COLOR = 255
 
 #-------------------------------external files/assets---------------------------------#
-background = pygame.image.load("spaceBG4.jpg")
+background = pygame.image.load("spaceBG.jpg")
 background = pygame.transform.scale(background,(screenW,screenH))
 sunIMG = pygame.image.load("sunBG.png")
 sunScaleX = 100 #sun image width
