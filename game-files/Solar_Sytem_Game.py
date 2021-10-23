@@ -17,13 +17,13 @@ FPS = 60
 MAX_COLOR = 255
 SUNMASS = 20000
 #-------------------------------external files/assets---------------------------------#
-background = pygame.image.load("Assets/spaceBG.jpg")
+background = pygame.image.load("assets/spaceBG.jpg")
 background = pygame.transform.scale(background,(screenW,screenH))
-sunIMG = pygame.image.load("Assets/sunBG.png")
+sunIMG = pygame.image.load("assets/sunBG.png")
 sunScaleX = 100 #sun image width
 sunScaleY = 100 #sun image lenght
 sunIMG = pygame.transform.scale(sunIMG,(sunScaleX,sunScaleY))
-music = pygame.mixer.music.load('Assets/5012-light-years-astra-lost-in-space.mp3')
+music = pygame.mixer.music.load('assets/5012-light-years-astra-lost-in-space.mp3')
 pygame.mixer.music.play(-1)
 volume = 0.2
 pygame.mixer.music.set_volume(volume)
@@ -109,7 +109,7 @@ def dynamicColor(realDistance):
         realDistance=255
     r=int(255-realDistance)
     g=int(realDistance*0.05)
-    b=int((255-r+sun.radius))
+    b=int(255-r)
 
     #Check if one of the color composant is out of bound and set it to max
     if r>255 or r<0:
@@ -128,11 +128,14 @@ def modifyVolume(volume):
 #--------------------------------------------------------------------------------------#
 
 #-------------------------------------Instanciate objects------------------------------#
-sun = SUN(screenW/2,screenH/2,40,SUNMASS = 20000) # instanciate the sun
+sun = SUN(screenW/2,screenH/2,40,20000) # instanciate the sun
              
-planetes = [ PLANETE("Elona",8+random.random()*15,80,0), #instanciate planetes
-             PLANETE("Earth",8+random.random()*15,40,0),
-             PLANETE("Ascalon",8+random.random()*15,200,0)]
+planetes = [ PLANETE("Elona",8+random.random()*15,40,math.pi/2), #instanciate planetes
+             PLANETE("Earth",8+random.random()*15,80,math.pi/7),
+             PLANETE("Ascalon",8+random.random()*15,200,-math.pi/2),
+             PLANETE("Rata Novus",8+random.random()*15,500,math.pi),
+             PLANETE("Shaemoor",8+random.random()*15,300,-math.pi/4),
+             PLANETE("Magumaa",8+random.random()*15,120,0),]
 #--------------------------------------------------------------------------------------#
 
 #------------------------------Instanciate usefull variables---------------------------#
