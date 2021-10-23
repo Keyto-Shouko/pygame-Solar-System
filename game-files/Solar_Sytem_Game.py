@@ -105,19 +105,25 @@ def distanceSoleil(x1,y1):
 # Function to set a dynamic color, each planete has its own color where R decrease the further you are from the Sun
 # and blue increases the further you are from the Sun
 def dynamicColor(realDistance):
-    if realDistance>255:
-        realDistance=255
+    #if realDistance>255:
+        #realDistance=255
     r=int(255-realDistance)
     g=int(realDistance*0.05)
     b=int(255-r)
 
     #Check if one of the color composant is out of bound and set it to max
-    if r>255 or r<0:
+    if r>255:
         r=MAX_COLOR
-    if g>255 or g<0:
+    elif r<0:
+        r=0
+    if g>255:
         g=MAX_COLOR
-    if b>255 or b<0:
+    elif g<0:
+        g=0
+    if b>255:
         b=MAX_COLOR
+    elif b<0:
+        b=0
     color=(r,g,b)
     print("color",color)
     return color
@@ -193,7 +199,7 @@ while play:
         sunOrbitY = sun.posY
 
         # Draw the orbit line
-        pygame.draw.circle(screen, (255,255,255), [sunOrbitX, sunOrbitY], planete.realDistance, width=1)
+        pygame.draw.circle(screen, planete.color, [sunOrbitX, sunOrbitY], planete.realDistance, width=1)
 
         #Draw planet
         pygame.draw.circle(screen,planete.color, (planete.x,planete.y), planete.radius )
